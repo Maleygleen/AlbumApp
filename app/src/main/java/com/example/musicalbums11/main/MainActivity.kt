@@ -2,11 +2,8 @@ package com.example.musicalbums11.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.musicalbums11.AlbumAdapter
 import com.example.musicalbums11.DetailActivity
 import com.example.musicalbums11.databinding.ActivityMainBinding

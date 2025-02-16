@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.musicalbums11.ApiConverter.ApiConverter
+import com.example.musicalbums11.apiConverter.ApiConverter
 import com.example.musicalbums11.model.Album
 
 class MainViewModel : ViewModel() {
