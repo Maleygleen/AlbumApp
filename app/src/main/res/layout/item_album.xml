@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp">
-
+    <!-- TODO: use tools:srcCompat to see your preview better -->
     <ImageView
         android:id="@+id/albumCover"
         android:layout_width="0dp"
@@ -16,6 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintDimensionRatio="1:1" />
 
+    <!-- TODO: your albumName is not symmetric, add marginEnd same as marginStart -->
+    <!-- TODO: use string resources -->
     <TextView
         android:id="@+id/albumName"
         android:layout_width="0dp"
