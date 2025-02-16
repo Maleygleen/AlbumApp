@@ -34,7 +34,7 @@
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:textStyle="bold"
-            tools:text="huj" />
+            tools:text="tyftyf" />
 
         <TextView
             android:id="@+id/detailArtistName"
@@ -43,7 +43,7 @@
             android:layout_marginBottom="8dp"
             android:textColor="@android:color/darker_gray"
             android:textSize="18sp"
-            tools:text="huj" />
+            tools:text="ftyfytfty" />
 
         <TextView
             android:id="@+id/detailGenre"
@@ -52,7 +52,7 @@
             android:layout_marginBottom="4dp"
             android:textColor="@android:color/black"
             android:textSize="16sp"
-            tools:text="huj" />
+            tools:text="ftyftyfttfy" />
 
         <TextView
             android:id="@+id/detailReleaseDate"
@@ -61,7 +61,7 @@
             android:layout_marginBottom="4dp"
             android:textColor="@android:color/black"
             android:textSize="16sp"
-            tools:text="huj" />
+            tools:text="tyffttfyftyfyt" />
 
         <TextView
             android:id="@+id/detailCopyright"
@@ -70,7 +70,7 @@
             android:layout_marginTop="8dp"
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
-            tools:text="huj" />
+            tools:text="fyttfytfytf" />
 
         <Button
             android:id="@+id/btnOpenITunes"
@@ -80,8 +80,7 @@
             android:layout_marginTop="16dp"
             android:background="@color/black"
             android:text="@string/btn"
-            android:textColor="@color/white"
-            tools:text="huj" />
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 </ScrollView>

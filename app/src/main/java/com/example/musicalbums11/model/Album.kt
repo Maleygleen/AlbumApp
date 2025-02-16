@@ -52,3 +52,6 @@ data class Feed(
 data class AlbumResponse(
     val feed: Feed
 )
+
+//val al = Author(name="Asdhgk", "asc")
+//al.name == "Asdhgk"
