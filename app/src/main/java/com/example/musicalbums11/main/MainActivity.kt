@@ -14,11 +14,13 @@ import com.example.musicalbums11.R
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-
+    // TODO: use ViewBinding
     private lateinit var recyclerView: RecyclerView
+    // TODO: don't use lateinit in your code, better use 'by lazy' delegate
     private lateinit var albumAdapter: AlbumAdapter
     private val apiService = ApiConverter()
 
+    // TODO: useless annotation
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +40,10 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Ошибка: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
             }
         }
+        // TODO: the most important part of Android UI is Theme and Styles.
+        //  You can delete this line and replace your current theme with Theme.MaterialComponents.DayNight.NoActionBar
+        //  /res/values/themes.xml and /res/values-night/themes.xml
+        //  https://medium.com/@gaurav.khanna/mastering-android-themes-chapter-1-4aadfa750ca7
         supportActionBar?.hide()
 
     }

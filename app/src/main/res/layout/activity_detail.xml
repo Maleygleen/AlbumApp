@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@color/white">
+    <!-- TODO: fix layout padding -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,6 +12,8 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <!-- TODO: use tools:srcCompat to see your preview better -->
+        <!-- TODO: don't hardcode your width and height, use wrap_content or match_parent as much as possible -->
         <ImageView
             android:id="@+id/detailAlbumCover"
             android:layout_width="300dp"

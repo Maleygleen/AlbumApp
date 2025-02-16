@@ -1,3 +1,4 @@
+// TODO: code style error - Kotlin Essentials
 package com.example.musicalbums11
 
 import android.content.Intent
@@ -14,7 +15,7 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-
+        // TODO: use ViewBinding
         val albumName = intent.getStringExtra("ALBUM_NAME")
         val artistName = intent.getStringExtra("ARTIST_NAME")
         val genre = intent.getStringExtra("GENRE") ?: "Неизвестный жанр"
@@ -37,6 +38,7 @@ class DetailActivity : AppCompatActivity() {
 
         albumNameTextView.text = albumName
         artistNameTextView.text = artistName
+        // TODO: use string resources with parameters, it is better for further app localization
         genreTextView.text = "Жанр: $genre"
         releaseDateTextView.text = "Дата выпуска: $releaseDate"
         copyrightTextView.text = "© $copyright"
@@ -47,6 +49,10 @@ class DetailActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        // TODO: the most important part of Android UI is Theme and Styles.
+        //  You can delete this line and replace your current theme with Theme.MaterialComponents.DayNight.NoActionBar
+        //  /res/values/themes.xml and /res/values-night/themes.xml
+        //  https://medium.com/@gaurav.khanna/mastering-android-themes-chapter-1-4aadfa750ca7
         supportActionBar?.hide()
 
     }
