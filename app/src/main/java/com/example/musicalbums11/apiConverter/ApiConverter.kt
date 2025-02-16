@@ -1,5 +1,5 @@
 // TODO: code style error - Kotlin Essentials
-package com.example.musicalbums11.ApiConverter
+package com.example.musicalbums11.apiConverter
 
 import com.example.musicalbums11.model.Album
 import com.example.musicalbums11.model.AlbumResponse
