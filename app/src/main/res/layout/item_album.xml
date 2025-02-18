@@ -52,7 +52,8 @@
         app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="@id/albumCover"
         android:textAlignment="center"
-        android:textAppearance="?attr/textAppearanceListItem"
-        tools:text="huj"/>
+        app:layout_constraintTop_toBottomOf="@id/albumCover"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
