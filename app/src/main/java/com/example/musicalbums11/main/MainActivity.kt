@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicalbums11.AlbumAdapter
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         albumAdapter = AlbumAdapter(emptyList())
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = albumAdapter
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
 
         lifecycleScope.launch {
             try {

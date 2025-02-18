@@ -10,4 +10,5 @@
     <color name="cardBackground">#FFFFFF</color>
     <color name="imagePlaceholder">#E0E0E0</color>
     <color name="textPrimary">#212121</color>
+    <color name="item_text">#FAF0E6</color>
 </resources>
