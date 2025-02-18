@@ -32,9 +32,10 @@ class DetailActivity : AppCompatActivity() {
         val copyrightTextView: TextView = findViewById(R.id.detailCopyright)
         val btnOpenITunes: Button = findViewById(R.id.btnOpenITunes)
 
-        albumCoverImageView.load(albumCoverUrl) {
+        albumCoverImageView.load(albumCoverUrl?.replace("100x100","1920x1080")) {
             crossfade(true)
         }
+
         albumNameTextView.text = albumName
         artistNameTextView.text = artistName
         // TODO: use string resources with parameters, it is better for further app localization

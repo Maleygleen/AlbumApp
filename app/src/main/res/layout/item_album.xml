@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="8dp">
     <!-- TODO: use tools:srcCompat to see your preview better -->
     <ImageView
@@ -14,20 +15,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintDimensionRatio="1:1" />
+        app:layout_constraintDimensionRatio="1:1"
+        tools:background="@drawable/ic_launcher_background"/>
 
     <!-- TODO: your albumName is not symmetric, add marginEnd same as marginStart -->
     <!-- TODO: use string resources -->
     <TextView
         android:id="@+id/albumName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Album Name"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/album_name"
+        android:textColor="@color/item_text"
+        android:textSize="20sp"
+        android:textAlignment="textStart"
         android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintTop_toTopOf="@id/albumCover"
+        app:layout_constraintEnd_toEndOf="@id/albumCover"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/albumCover" />
+
+    <TextView
+        android:id="@+id/albumAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/album_author"
+        android:textColor="@color/item_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/albumCover"
+        app:layout_constraintEnd_toEndOf="@id/albumCover"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="@id/albumCover"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/albumCover"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textAppearance="?attr/textAppearanceListItem"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

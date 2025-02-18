@@ -27,9 +27,11 @@ class AlbumAdapter(private var albums: List<Album>) : RecyclerView.Adapter<Album
         // TODO: use ViewBinding instead of findViewById
         val albumNameTextView: TextView = itemView.findViewById(R.id.albumName)
         val albumCover: ImageView = itemView.findViewById(R.id.albumCover)
+        val albumAuthor : TextView = itemView.findViewById(R.id.albumAuthor)
 
         fun bind(album: Album) {
             albumNameTextView.text = album.name
+            albumAuthor.text = album.artistName
             albumCover.load(album.artworkUrl100.replace("100x100","1920x1080")) {
                 crossfade(true)
             }
