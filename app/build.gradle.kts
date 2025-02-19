@@ -8,6 +8,10 @@ android {
     namespace = "com.example.musicalbums11"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.musicalbums11"
         minSdk = 24
