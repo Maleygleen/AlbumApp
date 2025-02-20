@@ -25,8 +25,6 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = albumAdapter
 
         observeAlbums()
-
-        supportActionBar?.hide()
     }
 
     private fun observeAlbums() {

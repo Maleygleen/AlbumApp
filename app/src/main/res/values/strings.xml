@@ -3,7 +3,7 @@
     <string name="album_cover">Album Cover</string>
     <string name="album_name">Album name</string>
     <string name="album_author">Album author</string>
-    <string name="genre">Жанр: </string>
-    <string name="date">Дата выпуска: </string>
-    <string name="copyright">© </string>
+    <string name="genre">Жанр: %s</string>
+    <string name="date">Дата выпуска: %s</string>
+    <string name="copyright">© %s</string>
 </resources>
