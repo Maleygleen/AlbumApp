@@ -15,7 +15,7 @@ import com.example.musicalbums11.model.Album
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val albumAdapter by lazy { AlbumAdapter { album -> openDetailActivity(album) } }
-    private val viewModel: MainViewModel by viewModels()  // Используем ViewModel
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +31,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeAlbums() {
         viewModel.albums.observe(this) { albums ->
-            albumAdapter.submitList(albums)  // Обновляем список
+            albumAdapter.submitList(albums)
         }
 
-        viewModel.loadAlbums() // Загружаем альбомы, если их нет
+        viewModel.loadAlbums()
     }
 
     private fun openDetailActivity(album: Album) {
