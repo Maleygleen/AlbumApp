@@ -39,9 +39,9 @@ class DetailActivity : AppCompatActivity() {
         albumNameTextView.text = albumName
         artistNameTextView.text = artistName
         // TODO: use string resources with parameters, it is better for further app localization
-        genreTextView.text = "Жанр: $genre"
-        releaseDateTextView.text = "Дата выпуска: $releaseDate"
-        copyrightTextView.text = "© $copyright"
+        genreTextView.text = "@string/genre $genre"
+        releaseDateTextView.text = "@string/date $releaseDate"
+        copyrightTextView.text = "@string/copyright $copyright"
 
         btnOpenITunes.setOnClickListener {
             albumUrl?.let { url ->

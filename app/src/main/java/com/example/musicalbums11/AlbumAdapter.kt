@@ -34,13 +34,12 @@ class AlbumAdapter(private val onItemClick: (Album) -> Unit) :
     }
 }
 
-// DiffUtil для сравнения элементов списка
 class AlbumDiffCallback : DiffUtil.ItemCallback<Album>() {
     override fun areItemsTheSame(oldItem: Album, newItem: Album): Boolean {
-        return oldItem.id == newItem.id  // Сравниваем по уникальному идентификатору
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(oldItem: Album, newItem: Album): Boolean {
-        return oldItem == newItem  // Сравниваем весь объект
+        return oldItem == newItem
     }
 }
