@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
+        //binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
         binding.recyclerView.adapter = albumAdapter
 
         observeAlbums()

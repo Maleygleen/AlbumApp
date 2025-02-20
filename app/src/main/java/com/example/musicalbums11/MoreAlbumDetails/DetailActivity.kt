@@ -15,7 +15,6 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-        // TODO: use ViewBinding
         val albumName = intent.getStringExtra("ALBUM_NAME")
         val artistName = intent.getStringExtra("ARTIST_NAME")
         val genre = intent.getStringExtra("GENRE") ?: "Неизвестный жанр"
@@ -38,7 +37,6 @@ class DetailActivity : AppCompatActivity() {
 
         albumNameTextView.text = albumName
         artistNameTextView.text = artistName
-        // TODO: use string resources with parameters, it is better for further app localization
         genreTextView.text = getString(R.string.genre, genre)
         releaseDateTextView.text = getString(R.string.date, releaseDate)
         copyrightTextView.text = getString(R.string.copyright, copyright)
