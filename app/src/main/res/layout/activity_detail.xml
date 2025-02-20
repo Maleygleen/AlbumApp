@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="16dp"
     android:background="@color/white">
     <!-- TODO: fix layout padding -->
 
@@ -22,7 +21,8 @@
             android:scaleType="centerCrop"
             android:contentDescription="@string/album_cover"
             android:layout_marginBottom="16dp"
-            tools:background="@drawable/ic_launcher_background"/>
+            tools:src = "@tools:sample/avatars"/>
+            <!--tools:background="@drawable/ic_launcher_background"-->
 
         <TextView
             android:id="@+id/detailAlbumName"

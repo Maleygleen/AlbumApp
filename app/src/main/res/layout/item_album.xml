@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintDimensionRatio="1:1"
-        tools:background="@drawable/ic_launcher_background"/>
+        tools:src = "@tools:sample/avatars"/>
 
     <!-- TODO: your albumName is not symmetric, add marginEnd same as marginStart -->
     <!-- TODO: use string resources -->
@@ -34,7 +34,8 @@
         app:layout_constraintTop_toTopOf="@id/albumCover"
         app:layout_constraintEnd_toEndOf="@id/albumCover"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/albumCover" />
+        app:layout_constraintStart_toStartOf="@id/albumCover"
+        tools:text="huj"/>
 
     <TextView
         android:id="@+id/albumAuthor"
@@ -49,6 +50,7 @@
         app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="@id/albumCover"
         android:textAlignment="center"
-        android:textAppearance="?attr/textAppearanceListItem"/>
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="huj"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,8 @@
 
     <!-- TODO: use tools:listItem and tools:itemCount to see your preview better -->
     <androidx.recyclerview.widget.RecyclerView
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
