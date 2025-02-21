@@ -6,4 +6,5 @@
     <string name="genre">Жанр: %s</string>
     <string name="date">Дата выпуска: %s</string>
     <string name="copyright">© %s</string>
+    <string name="btn">Открыть в iTunes</string>
 </resources>
