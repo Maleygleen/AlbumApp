@@ -8,6 +8,10 @@ android {
     namespace = "com.example.musicalbums11"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.musicalbums11"
         minSdk = 24
@@ -45,6 +49,9 @@ dependencies {
     implementation(libs.bundles.ktor.client)
 
     testImplementation(libs.junit)
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("androidx.activity:activity-ktx:1.8.2")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 

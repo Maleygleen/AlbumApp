@@ -15,7 +15,6 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-        // TODO: use ViewBinding
         val albumName = intent.getStringExtra("ALBUM_NAME")
         val artistName = intent.getStringExtra("ARTIST_NAME")
         val genre = intent.getStringExtra("GENRE") ?: "Неизвестный жанр"
@@ -32,15 +31,15 @@ class DetailActivity : AppCompatActivity() {
         val copyrightTextView: TextView = findViewById(R.id.detailCopyright)
         val btnOpenITunes: Button = findViewById(R.id.btnOpenITunes)
 
-        albumCoverImageView.load(albumCoverUrl) {
+        albumCoverImageView.load(albumCoverUrl?.replace("100x100","1920x1080")) {
             crossfade(true)
         }
+
         albumNameTextView.text = albumName
         artistNameTextView.text = artistName
-        // TODO: use string resources with parameters, it is better for further app localization
-        genreTextView.text = "Жанр: $genre"
-        releaseDateTextView.text = "Дата выпуска: $releaseDate"
-        copyrightTextView.text = "© $copyright"
+        genreTextView.text = getString(R.string.genre, genre)
+        releaseDateTextView.text = getString(R.string.date, releaseDate)
+        copyrightTextView.text = getString(R.string.copyright, copyright)
 
         btnOpenITunes.setOnClickListener {
             albumUrl?.let { url ->
@@ -48,11 +47,5 @@ class DetailActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        // TODO: the most important part of Android UI is Theme and Styles.
-        //  You can delete this line and replace your current theme with Theme.MaterialComponents.DayNight.NoActionBar
-        //  /res/values/themes.xml and /res/values-night/themes.xml
-        //  https://medium.com/@gaurav.khanna/mastering-android-themes-chapter-1-4aadfa750ca7
-        supportActionBar?.hide()
-
     }
 }

@@ -7,12 +7,16 @@
 
     <!-- TODO: use tools:listItem and tools:itemCount to see your preview better -->
     <androidx.recyclerview.widget.RecyclerView
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_album"
+        tools:itemCount="@integer/material_motion_duration_long_1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

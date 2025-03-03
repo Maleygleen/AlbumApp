@@ -15,7 +15,7 @@ class ApiConverter {
     val client = HttpClient(CIO) {
         install(ContentNegotiation) {
             json(Json {
-                ignoreUnknownKeys = true // Игнорировать неизвестные поля в JSON
+                ignoreUnknownKeys = true
             })
         }
     }

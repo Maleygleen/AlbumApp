@@ -1,69 +1,45 @@
 package com.example.musicalbums11
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.musicalbums11.databinding.ItemAlbumBinding
 import com.example.musicalbums11.model.Album
 
-// TODO: use ListAdapter instead of RecyclerView.Adapter
-//   https://medium.com/geekculture/android-listadapter-a-better-implementation-for-the-recyclerview-1af1826a7d21
-//   https://www.thedroidsonroids.com/blog/difference-between-listview-recyclerview
-class AlbumAdapter(private var albums: List<Album>) : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
+class AlbumAdapter(private val onItemClick: (Album) -> Unit) :
+    ListAdapter<Album, AlbumAdapter.AlbumViewHolder>(AlbumDiffCallback()) {
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun updateAlbums(newAlbums: List<Album>) {
-        albums = newAlbums
-        notifyDataSetChanged()
-    }
-
-    class AlbumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // TODO: use 'private' modifier where is possible
-        // TODO: use ViewBinding instead of findViewById
-        val albumNameTextView: TextView = itemView.findViewById(R.id.albumName)
-        val albumCover: ImageView = itemView.findViewById(R.id.albumCover)
-
-        fun bind(album: Album) {
-            albumNameTextView.text = album.name
-            albumCover.load(album.artworkUrl100.replace("100x100","1920x1080")) {
+    class AlbumViewHolder(private val binding: ItemAlbumBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(album: Album, onItemClick: (Album) -> Unit) {
+            binding.albumName.text = album.name
+            binding.albumAuthor.text = album.artistName
+            binding.albumCover.load(album.artworkUrl100.replace("100x100", "1920x1080")) {
                 crossfade(true)
             }
+            binding.root.setOnClickListener { onItemClick(album) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_album, parent, false)
-        return AlbumViewHolder(view)
+        val binding = ItemAlbumBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return AlbumViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
-        val album = albums[position]
-        holder.bind(album)
+        val album = getItem(position)
+        holder.bind(album, onItemClick)
+    }
+}
 
-        val genreName = album.genres.firstOrNull()?.name ?: "Неизвестный жанр"
-
-        holder.itemView.setOnClickListener {
-            // TODO: modify your code like this:
-            //  "class AlbumAdapter(private val onItemClick: (Album) -> Unit)"
-            //  and here write like this: holder.itemView.setOnClickListener { onItemClick(album) }
-            //  read more about Kotlin Lambda and Lambda with receiver in Kotlin Essentials
-            val context = holder.itemView.context
-            val intent = Intent(context, DetailActivity::class.java).apply {
-                putExtra("ALBUM_NAME", album.name)
-                putExtra("ARTIST_NAME", album.artistName)
-                putExtra("GENRE", genreName)
-                putExtra("RELEASE_DATE", album.releaseDate)
-                putExtra("ALBUM_COVER", album.artworkUrl100)
-                putExtra("ALBUM_URL", album.url)
-            }
-            context.startActivity(intent)
-        }
+class AlbumDiffCallback : DiffUtil.ItemCallback<Album>() {
+    override fun areItemsTheSame(oldItem: Album, newItem: Album): Boolean {
+        return oldItem.id == newItem.id
     }
 
-    override fun getItemCount(): Int = albums.size
+    override fun areContentsTheSame(oldItem: Album, newItem: Album): Boolean {
+        return oldItem == newItem
+    }
 }
