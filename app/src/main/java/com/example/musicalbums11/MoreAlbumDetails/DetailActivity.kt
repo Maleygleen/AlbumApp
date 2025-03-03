@@ -23,6 +23,7 @@ class DetailActivity : AppCompatActivity() {
         val albumCoverUrl = intent.getStringExtra("ALBUM_COVER")
         val albumUrl = intent.getStringExtra("ALBUM_URL")
 
+        // TODO: вьюбиндинг
         val albumCoverImageView: ImageView = findViewById(R.id.detailAlbumCover)
         val albumNameTextView: TextView = findViewById(R.id.detailAlbumName)
         val artistNameTextView: TextView = findViewById(R.id.detailArtistName)

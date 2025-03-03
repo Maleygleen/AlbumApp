@@ -16,7 +16,7 @@ class AlbumAdapter(private val onItemClick: (Album) -> Unit) :
         fun bind(album: Album, onItemClick: (Album) -> Unit) {
             binding.albumName.text = album.name
             binding.albumAuthor.text = album.artistName
-            binding.albumCover.load(album.artworkUrl100.replace("100x100", "1920x1080")) {
+            binding.albumCover.load(album.artworkUrl100.replace("100x100", "1920x1080")) { // TODO: вьюха - тупая и красивая, оператор реплейс тут не должен быть
                 crossfade(true)
             }
             binding.root.setOnClickListener { onItemClick(album) }

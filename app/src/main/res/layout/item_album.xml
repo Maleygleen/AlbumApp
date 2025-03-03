@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="8dp">
+    <!-- TODO: padding лучше тут убрать -->
     <!-- TODO: use tools:srcCompat to see your preview better -->
     <ImageView
         android:id="@+id/albumCover"
@@ -20,6 +21,7 @@
 
     <!-- TODO: your albumName is not symmetric, add marginEnd same as marginStart -->
     <!-- TODO: use string resources -->
+    <!-- TODO: android:text лучше убрать тут и последующий текстах -->
     <TextView
         android:id="@+id/albumName"
         android:layout_width="wrap_content"

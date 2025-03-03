@@ -12,7 +12,7 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
 class ApiConverter {
-    val client = HttpClient(CIO) {
+    val client = HttpClient(CIO) { // TODO: может быть приватным, студия подсвечивает желтым
         install(ContentNegotiation) {
             json(Json {
                 ignoreUnknownKeys = true

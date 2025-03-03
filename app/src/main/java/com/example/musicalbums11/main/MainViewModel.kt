@@ -18,9 +18,11 @@ class MainViewModel : ViewModel() {
 
         viewModelScope.launch {
             try {
+                // TODO: url лучше сразу внутрь метода fetchAlbums
                 val albumList = apiService.fetchAlbums("https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/albums.json")
                 _albums.postValue(albumList)
             } catch (e: Exception) {
+                // TODO: ошибку надо либо показать пользователю если она есть. можно тостом или снекбаром. также лучше залогировать её Timber.e
                 e.printStackTrace()
             }
         }
